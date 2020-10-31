@@ -1,5 +1,7 @@
 animals = ["cow"];
 
+textAnimals = ["Pig", "Blue Whale", "Feret", "Leopard"];
+
 
 function myFunction(){
   let input = document.getElementById("inp")
@@ -17,6 +19,14 @@ function myFunction(){
   else {
     document.getElementById("error").classList.remove("errormsg1");
     animals.push(animal);
+
+    let newP = document.createElement("p");
+    let newBr = document.createElement("br");
+    let text = document.createTextNode(animal);
+    newP.appendChild(text);
+    document.getElementById("player2").appendChild(newP);
+    document.getElementById("player2").appendChild(newBr);
+
     document.getElementById("inp").value = "";
     console.log(animals);
 
