@@ -1,4 +1,4 @@
-animals = ["Cow"];
+animals = ["cow"];
 
 AList = ["Abyssinian", "Adelie Penguin", "Affenpinscher", "Afghan Hound", "African Bush Elephant", "African Civet", "African Clawed Frog", "African Forest Elephant", "African Palm Civet", "African Penguin", "African Tree Toad", "African Wild Dog", "Ainu Dog", "Airedale Terrier", "Akbash", "Akita", "Alaskan Malamute", "Albatross", "Aldabra Giant Tortoise", "Alligator", "Alpine Dachsbracke", "American Bulldog", "American Cocker Spaniel", "American Coonhound", "American Eskimo Dog", "American Foxhound", "American Pit Bull Terrier", "American Staffordshire Terrier", "American Water Spaniel", "Anatolian Shepherd Dog", "Angelfish", "Ant", "Anteater", "Antelope", "Appenzeller Dog", "Arctic Fox", "Arctic Hare", "Arctic Wolf", "Armadillo", "Asian Elephant", "Asian Giant Hornet", "Asian Palm Civet", "Asiatic Black Bear", "Australian Cattle Dog", "Australian Kelpie Dog", "Australian Mist", "Australian Shepherd", "Australian Terrier", "Avocet", "Axolotl", "Aye Aye"];
 
@@ -66,6 +66,7 @@ let dict = {
   "KList": KList,
   "LList": LList,
   "MList": MList,
+  "NList": NList,
   "OList": OList,
   "PList": PList,
   "QList": QList,
@@ -89,7 +90,7 @@ setInterval(function(){
 
     answerAnimals = dict[answerList];
 
-    answer = answerAnimals[Math.floor(Math.random()*(animals.length - 1))];
+    answer = answerAnimals[Math.floor(Math.random()*(animals.length - 1))].toLowerCase();
     console.log(answer);
     if (animals.includes(answer)){
       return;
