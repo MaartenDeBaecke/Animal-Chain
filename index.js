@@ -155,7 +155,7 @@ setInterval(function(){//answer bot
       }
     }
 
-    for (let c = 0; c < Math.floor(found.clientHeight / 29); c++){
+    for (let c = 1; c < Math.ceil(found.clientHeight / 29); c++){
       document.getElementById("player2").appendChild(document.createElement("br"));
     }
 
@@ -210,10 +210,9 @@ function myFunction(){//checking and printing input
       }
     }
 
-    for (let c = 0; c < Math.floor(found.clientHeight / 29); c++){
+    for (let c = 1; c < Math.ceil(found.clientHeight / 29); c++){
       document.getElementById("player1").appendChild(document.createElement("br"));
-      console.log(Math.floor(found.clientHeight / 29))
-      console.log(found.clientHeight)
+
     }
 
 
