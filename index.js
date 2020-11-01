@@ -190,7 +190,7 @@ setInterval(function(){//answer bot
       }
     };
 
-    y = 59;
+    y += 10;
     i = 99;
     document.getElementById("sec").innerHTML = y.toString();
     document.getElementById("mil").innerHTML = i.toString();
