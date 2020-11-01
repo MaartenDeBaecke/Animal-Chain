@@ -110,7 +110,7 @@ h3{
 .input{
   border-style: none none solid none;
   border-width: 3.5px;
-  border-color: #ffcccc;
+  border-color: rgb(155,85,85);
   background-color: transparent;
   text-align: center;
   height: 2rem;
@@ -121,14 +121,13 @@ h3{
 
 .input:focus {
   outline: none;
-  border-color: #ffb6c1;
+  border-color: black;
 }
 
 .input::placeholder {
-  color: #ffcccc;
+  color: rgb(155,85,85);
   font-family: 'Rammetto One', cursive;
   font-size: 1.5rem;
-  text-shadow: 0 0 1px black, 0 0 1px black;
 }
 
 .transparent{
