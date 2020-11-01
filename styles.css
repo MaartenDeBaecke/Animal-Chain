@@ -208,11 +208,11 @@ h3{
   }
 
   .line1 {
-    border-bottom: 280px solid;
+    border-bottom: 280px solid #ffcccc;
   }
 
   .line2 {
-    border-bottom: 80px solid;
+    border-bottom: 80px solid #ffb6c1;
     width: 170rem;
     height: 95rem;
   }
