@@ -16,13 +16,13 @@ body{
 }
 
 .line1 {
-  border-bottom: 145px solid #FEADB5;
+  border-bottom: 145px solid #ffcccc;
   width: 150rem;
   height: 70rem;
 }
 
 .line2 {
-  border-bottom: 40px solid #ff808e;
+  border-bottom: 40px solid #ffb6c1;
   width: 155rem;
   height: 80rem;
 }
@@ -78,14 +78,14 @@ h3{
 }
 
 .players::-webkit-scrollbar-thumb {
-  background-color: #fa5f70;
+  background-color: #ffb6c1;
   border-radius: 20px;
   border: 6px solid transparent;
   background-clip: content-box;
 }
 
 .players::-webkit-scrollbar-thumb:hover {
-  background-color: #fc4c5f;
+  background-color: #ffb6c1;
 }
 
 .player1{
@@ -110,22 +110,22 @@ h3{
 .input{
   border-style: none none solid none;
   border-width: 3.5px;
-  border-color: #ff77aa;
+  border-color: #ffcccc;
   background-color: transparent;
   text-align: center;
   height: 2rem;
-  color: #ff3377;
+  color: #ffb6c1;
   font-family: 'Rammetto One', cursive;
   font-size: 1.5rem;
 }
 
 .input:focus {
   outline: none;
-  border-color: #ff3377;
+  border-color: #ffb6c1;
 }
 
 .input::placeholder {
-  color: #ff77aa;
+  color: #ffcccc;
   font-family: 'Rammetto One', cursive;
   font-size: 1.5rem;
 }
@@ -208,11 +208,11 @@ h3{
   }
 
   .line1 {
-    border-bottom: 280px solid #FEADB5;
+    border-bottom: 280px solid;
   }
 
   .line2 {
-    border-bottom: 80px solid #ff808e;
+    border-bottom: 80px solid;
     width: 170rem;
     height: 95rem;
   }
