@@ -196,9 +196,9 @@ h3{
 
 .popup{
   width: 100vw;
-  height: 57vw;
+  height: 68vh;
   position: fixed;
-  top: 43vw;
+  top: 32vh;
   background-color: white;
   font-size: 1.3rem;
   z-index: 10;
@@ -214,6 +214,12 @@ h3{
   visibility: hidden;
 }
 
+@media (max-width: 799px) {
+  .popup{
+    height: 57vh;
+    top: 43vh;
+  }
+}
 
 @media (pointer:none), (pointer:coarse) {
   body{
