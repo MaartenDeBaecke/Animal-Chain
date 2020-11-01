@@ -32,7 +32,7 @@ OList = ["Ocelot", "Octopus", "Okapi", "Old English Sheepdog", "Olm", "Opossum",
 
 PList = ["Panda", "Panther", "Parakeet", "Parrot", "Partridge", "Peacock", "Peccary", "Pelican", "Penguin", "Pheasant", "Pig", "Pigeon", "Pika", "Pike", "Piranha", "Platypus", "Poison Dart Frog", "Polar Bear", "Polecat", "Porcupine", "Prairie Dog", "Prawn", "Praying Mantis", "Proboscis Monkey", "Puff Adder", "Puffer Fish", "Puffin", "Puma", "Python"];
 
-QList = ["Quail", "Queen Snake", "Quelea (Red Billed)", "Quetzal", "Quokka", "Quoll"];
+QList = ["Quail", "Queen Snake", "Quelea", "Quetzal", "Quokka", "Quoll"];
 
 RList = ["Rabbit", "Raccoon", "Raccoon Dog", "Radiated Tortoise", "Ragdoll", "Rat", "Rattlesnake", "Red Knee Tarantula", "Red Panda", "Red Wolf", "Red-handed Tamarin", "Reindeer", "Rhinoceros", "River Dolphin", "River Turtle", "Robin", "Rock Hyrax", "Rockhopper Penguin", "Roseate Spoonbill", "Rottweiler", "Royal Penguin", "Russian Blue"];
 
@@ -40,7 +40,7 @@ SList = ["Sabre-Toothed Tiger", "Saint Bernard", "Salamander", "Sand Lizard", "S
 
 TList = ["Tang", "Tapir", "Tarsier", "Tasmanian Devil", "Tawny Owl", "Termite", "Tetra", "Thorny Devil", "Tibetan Mastiff", "Tiffany", "Tiger", "Tiger Salamander", "Tiger Shark", "Tortoise", "Toucan", "Tree Frog", "Tropicbird", "Tuatara", "Turkey", "Turkish Angora"];
 
-UList = ["Uakari", "Umbrellabird", "Unau (sloth)", "Unicorn (mythical)", "Urchin", "Urial", "Uromastix"];
+UList = ["Uakari", "Umbrellabird", "Unau", "Urchin", "Urial", "Uromastix"];
 
 VList = ["Vampire Bat", "Vervet Monkey", "Vicuña", "Viper", "Viperfish", "Vole", "Vulture"];
 
@@ -81,8 +81,39 @@ let dict = {
   "ZList": ZList
 };
 
+let i = 100;
+let y = 59;
+let timing = true;
 
-setInterval(function(){
+setInterval(function(){ //clock
+  if (timing){
+    i--;
+    if (i < 10){
+      document.getElementById("mil").innerHTML = "0" + i.toString();
+    } else {
+      document.getElementById("mil").innerHTML = i.toString();
+    }
+
+    if (i === 0){
+      i = 100;
+      y--;
+      if (y < 10){
+        document.getElementById("sec").innerHTML = "0" + y.toString();
+      } else {
+        document.getElementById("sec").innerHTML = y.toString();
+      }
+
+      if (y===0){
+        timing = false;
+        window.location.reload();
+
+      }
+    }
+  }
+
+}, 10);
+
+setInterval(function(){//answer bot
   if (animals.length % 2 === 0){
     let char = ((animals[animals.length - 1]).slice(-1)).toUpperCase();//get last char prev animal
     let answerList = char + 'List';
@@ -90,7 +121,7 @@ setInterval(function(){
 
     answerAnimals = dict[answerList];//get list
 
-    answer = answerAnimals[Math.floor(Math.random()*(animals.length - 1))].toLowerCase();//get a random animal from the correct list
+    answer = answerAnimals[Math.floor(Math.random()*(answerAnimals.length - 1))].toLowerCase();//get a random animal from the correct list
     if (animals.includes(answer)){//check if animal is not used
       return;//break
     }
@@ -102,11 +133,26 @@ setInterval(function(){
     newP.appendChild(text);
     document.getElementById("player1").appendChild(newP);
     document.getElementById("player1").appendChild(newBr);
+    if (answer.length > 17){
+      document.getElementById("player2").appendChild(document.createElement("br"));
 
+    }
+
+    y = 59;
+    i = 99;
+    document.getElementById("sec").innerHTML = y.toString();
+    document.getElementById("mil").innerHTML = i.toString();
+
+    timing = true;
+    let objDiv = document.getElementById("players");
+    objDiv.scrollTop = objDiv.scrollHeight;
+    return;
   }
 }, 30);
 
-function myFunction(){
+
+
+function myFunction(){//checking and printing input
   let input = document.getElementById("inp")
   let animal = input.value.toLowerCase();
 
@@ -120,6 +166,7 @@ function myFunction(){
     document.getElementById("error").classList.add("errormsg1");
   }
   else { //add the animal
+    timing = false;
     document.getElementById("error").classList.remove("errormsg1");
     animals.push(animal);
 
@@ -129,10 +176,11 @@ function myFunction(){
     newP.appendChild(text);
     document.getElementById("player2").appendChild(newP);
     document.getElementById("player2").appendChild(newBr);
+    if (animal.length > 17){
+      document.getElementById("player1").appendChild(document.createElement("br"));
+    }
 
     document.getElementById("inp").value = "";
-    console.log(animals);
-
   }
 
   return false;
