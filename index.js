@@ -142,9 +142,21 @@ setInterval(function(){//answer bot
     newP.appendChild(text);
     document.getElementById("player1").appendChild(newP);
     document.getElementById("player1").appendChild(newBr);
-    if (answer.length > 17){
-      document.getElementById("player2").appendChild(document.createElement("br"));
 
+    //make sure that enough br tags are added
+    var pTags = document.getElementsByTagName("p");
+    var searchText = answer;
+    var found;
+
+    for (var i = 0; i < pTags.length; i++) {
+      if (pTags[i].textContent == searchText) {
+        found = pTags[i];
+        break;
+      }
+    }
+
+    for (let c = 0; c < Math.floor(found.clientHeight / 29); c++){
+      document.getElementById("player2").appendChild(document.createElement("br"));
     }
 
     y = 59;
@@ -185,9 +197,26 @@ function myFunction(){//checking and printing input
     newP.appendChild(text);
     document.getElementById("player2").appendChild(newP);
     document.getElementById("player2").appendChild(newBr);
-    if (animal.length > 17){
-      document.getElementById("player1").appendChild(document.createElement("br"));
+
+    //make sure that enough br tags are added
+    var pTags = document.getElementsByTagName("p");
+    var searchText = animal;
+    var found;
+
+    for (var i = 0; i < pTags.length; i++) {
+      if (pTags[i].textContent == searchText) {
+        found = pTags[i];
+        break;
+      }
     }
+
+    for (let c = 0; c < Math.floor(found.clientHeight / 29); c++){
+      document.getElementById("player1").appendChild(document.createElement("br"));
+      console.log(Math.floor(found.clientHeight / 29))
+      console.log(found.clientHeight)
+    }
+
+
 
     document.getElementById("inp").value = "";
   }
