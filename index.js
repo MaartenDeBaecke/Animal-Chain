@@ -84,16 +84,15 @@ let dict = {
 
 setInterval(function(){
   if (animals.length % 2 === 0){
-    let char = ((animals[animals.length - 1]).slice(-1)).toUpperCase();
+    let char = ((animals[animals.length - 1]).slice(-1)).toUpperCase();//get last char prev animal
     let answerList = char + 'List';
     let answerAnimals = [];
 
-    answerAnimals = dict[answerList];
+    answerAnimals = dict[answerList];//get list
 
-    answer = answerAnimals[Math.floor(Math.random()*(animals.length - 1))].toLowerCase();
-    console.log(answer);
-    if (animals.includes(answer)){
-      return;
+    answer = answerAnimals[Math.floor(Math.random()*(animals.length - 1))].toLowerCase();//get a random animal from the correct list
+    if (animals.includes(answer)){//check if animal is not used
+      return;//break
     }
     animals.push(answer);
 
@@ -120,7 +119,7 @@ function myFunction(){
     document.getElementById("error").innerHTML = "Carefull there, '" + animal + "' is already used!";
     document.getElementById("error").classList.add("errormsg1");
   }
-  else {
+  else { //add the animal
     document.getElementById("error").classList.remove("errormsg1");
     animals.push(animal);
 

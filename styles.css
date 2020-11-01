@@ -1,123 +1,71 @@
 body{
   text-align: center;
-  width: 100vw;
   overflow-x: hidden;
   margin-left: 0;
   color: black;
   font-family: 'Rammetto One', cursive;
-  height: 85%;
+
+}
+
+.line1, .line2{
+  z-index: -1;
+  transform: rotate(50deg);
+  top: 0;
+  position: absolute;
 }
 
 .line1 {
-  z-index: -1;
-  width: 150vw;
-  height: 95vh;
   border-bottom: 145px solid #FEADB5;
-  -webkit-transform:
-      translateY(-20px)
-      translateX(20px)
-      rotate(42deg);
-  position: absolute;
-  /* top: -20px; */
+  width: 150rem;
+  height: 70rem;
 }
 
 .line2 {
-  z-index: -1;
-  width: 110vw;
-  height: 95vh;
-  border-bottom: 25px solid #FEADB5;
-  -webkit-transform:
-      translateY(-20px)
-      translateX(-10px)
-      rotate(42deg);
-  position: absolute;
-  /* top: -20px; */
+  border-bottom: 40px solid #FEADB5;
+  width: 155rem;
+  height: 80rem;
 }
 
+.line3, .line4{
+  z-index: -1;
+  transform: rotate(320deg);
+  position: absolute;
+  top: 95rem;
+  right: -10rem;
+}
 
 .line3 {
+  border-bottom: 145px solid #ff96a1;
+  width: 160rem;
+  height: 70rem;
+}
+
+.line4 {
+  border-bottom: 40px solid #ff8c98;
+  width: 165rem;
+  height: 80rem;
+}
+
+.line5, .line6{
   z-index: -1;
-  width: 150vw;
-  height: 95vh;
-  border-bottom: 145px solid #FEADB5;
-  -webkit-transform:
-      translateY(100rem)
-      translateX(20px)
-      rotate(133deg);
+  transform: rotate(50deg);
+  top: 180rem;
   position: absolute;
-  /* top: -20px; */
+  left: -10rem;
 }
 
-
-
-@media (max-width: 1300px) {
-  .line1 {
-    width: 130vw;
-    height: 70vh;
-    -webkit-transform:
-        translateY(-5px)
-        translateX(-80px)
-        rotate(50deg);
-  }
-  .line2 {
-    width: 110vw;
-    height: 95vh;
-    -webkit-transform:
-        translateY(-5px)
-        translateX(-80px)
-        rotate(50deg);
-  }
+.line5 {
+  border-bottom: 145px solid #fa7886;
+  width: 150rem;
+  height: 70rem;
 }
 
-@media (max-width: 790px) {
-  .line1 {
-    width: 130vw;
-    height: 70vh;
-    -webkit-transform:
-        translateY(-20px)
-        translateX(-60px)
-        rotate(50deg);
-  }
-  .line2 {
-    width: 110vw;
-    height: 95vh;
-    -webkit-transform:
-        translateY(-10px)
-        translateX(-60px)
-        rotate(50deg);
-  }
+.line6 {
+  border-bottom: 40px solid #fa6b7b;
+  width: 155rem;
+  height: 80rem;
 }
 
-@media (max-width: 650px) {
-  .line1 {
-    width: 150vw;
-    height: 90vh;
-    -webkit-transform:
-        translateY(-20px)
-        translateX(20px)
-        rotate(50deg);
-  }
-  .line2 {
-    width: 150vw;
-    height: 140vh;
-    -webkit-transform:
-        translateY(-200px)
-        translateX(80px)
-        rotate(50deg);
-  }
-
-  .line3 {
-
-    width: 150vw;
-    height: 95vh;
-    border-bottom: 145px solid #FEADB5;
-    -webkit-transform:
-        translateY(50rem)
-        translateX(150px)
-        rotate(140deg);
-  }
-
-}
 
 .header{
   width: 6.5rem;
@@ -133,6 +81,7 @@ body{
 .cow{
   width: 9.5rem;
   margin-top: 8vh;
+  z-index: -1;
 }
 
 .name1{
@@ -198,4 +147,20 @@ h3{
 
 .errormsg1{
   color: purple;
+}
+
+/* Clock */
+@media(min-width: 1200px){
+  .clockCont{
+    position: relative;
+    bottom: 9.5rem;
+    left: 18rem;
+    font-size: 2.3rem;
+    font-family: 'Arvo', serif;
+  }
+
+  .timeTag{
+    font-size: 1.5rem;
+    margin-bottom: -0.8rem;
+  }
 }
