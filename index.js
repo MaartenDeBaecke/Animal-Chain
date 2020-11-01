@@ -81,6 +81,27 @@ let dict = {
   "ZList": ZList
 };
 
+let isMobile = {
+  Android: function() {
+      return navigator.userAgent.match(/Android/i);
+  },
+  BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+  },
+  iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+  Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+  },
+  Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i);
+  },
+  any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+  }
+};
+
 
 let i = 100;
 let y = 59;
@@ -155,9 +176,15 @@ setInterval(function(){//answer bot
       }
     }
 
-    for (let c = 1; c < Math.ceil(found.clientHeight / 29); c++){
-      document.getElementById("player2").appendChild(document.createElement("br"));
-    }
+    if( isMobile.any() ){
+      for (let c = 1; c < Math.ceil(found.clientHeight / 96); c++){
+        document.getElementById("player2").appendChild(document.createElement("br"));
+      }
+    } else {
+      for (let c = 1; c < Math.ceil(found.clientHeight / 29); c++){
+        document.getElementById("player2").appendChild(document.createElement("br"));
+      }
+    };
 
     y = 59;
     i = 99;
@@ -210,10 +237,15 @@ function myFunction(){//checking and printing input
       }
     }
 
-    for (let c = 1; c < Math.ceil(found.clientHeight / 29); c++){
-      document.getElementById("player1").appendChild(document.createElement("br"));
-
-    }
+    if( isMobile.any() ){
+      for (let c = 1; c < Math.ceil(found.clientHeight / 96); c++){
+        document.getElementById("player1").appendChild(document.createElement("br"));
+      }
+    } else {
+      for (let c = 1; c < Math.ceil(found.clientHeight / 29); c++){
+        document.getElementById("player1").appendChild(document.createElement("br"));
+      }
+    };
 
 
 
