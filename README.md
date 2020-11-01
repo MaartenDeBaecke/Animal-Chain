@@ -7,3 +7,4 @@ The rules:
 - Your animal should exist!
 
 Have fun playing, and be quick! Time is ticking.
+→ https://maartendebaecke.github.io/Animal-Chain/
