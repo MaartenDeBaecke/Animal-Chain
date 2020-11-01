@@ -107,6 +107,9 @@ let i = 100;
 let y = 59;
 let timing = true;
 
+let score = 0;
+let length = 0;
+
 //give body the right width
 document.getElementById("body").style.width = window.innerWidth + "px";
 //listen for window resize event
@@ -135,8 +138,9 @@ setInterval(function(){ //clock
 
       if (y===0){
         timing = false;
-        window.location.reload();
-
+        document.getElementById("popupText1").innerHTML = "You scored " + score.toString() + "points.";
+        document.getElementById("popupText2").innerHTML = "You chained " + length.toString() + " animals!";
+        document.getElementById("popup").classList.remove('nopopup');
       }
     }
   }
@@ -217,7 +221,9 @@ function myFunction(){//checking and printing input
     timing = false;
     document.getElementById("error").classList.remove("errormsg1");
     animals.push(animal);
-
+    score += animal.length;
+    length += 2;
+    console.log(score);
     let newP = document.createElement("p");
     let newBr = document.createElement("br");
     let text = document.createTextNode(animal);

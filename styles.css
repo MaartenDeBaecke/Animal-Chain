@@ -194,6 +194,26 @@ h3{
   }
 }
 
+.popup{
+  width: 100vw;
+  height: 57vw;
+  position: fixed;
+  top: 43vw;
+  background-color: white;
+  font-size: 1.3rem;
+  z-index: 10;
+  padding: 50px;
+  font-family: 'Arvo', serif;
+}
+
+.GameOver{
+  font-family: 'Henny Penny', cursive;
+}
+
+.nopopup{
+  visibility: hidden;
+}
+
 
 @media (pointer:none), (pointer:coarse) {
   body{
