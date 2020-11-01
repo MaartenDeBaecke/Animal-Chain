@@ -80,6 +80,10 @@ let dict = {
   "YList": YList,
   "ZList": ZList
 };
+window.addEventListener('resize', () => {
+  document.querySelector(':root').style
+    .setProperty('--vw', window.innerWidth/100 + 'px');
+})
 
 let i = 100;
 let y = 59;
