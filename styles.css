@@ -197,7 +197,7 @@ h3{
 
 @media (pointer:none), (pointer:coarse) {
   body{
-    width: calc(100 * var(--vw));
+    width: 100vw;
   }
 
   .line1, .line2{

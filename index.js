@@ -80,14 +80,19 @@ let dict = {
   "YList": YList,
   "ZList": ZList
 };
-window.addEventListener('resize', () => {
-  document.querySelector(':root').style
-    .setProperty('--vw', window.innerWidth/100 + 'px');
-})
+
 
 let i = 100;
 let y = 59;
 let timing = true;
+
+//give body the right width
+document.getElementById("body").style.width = window.innerWidth + "px";
+//listen for window resize event
+window.addEventListener('resize', function(event){
+  document.getElementById("body").style.width = window.innerWidth + "px";
+});
+
 
 setInterval(function(){ //clock
   if (timing){
